@@ -1,0 +1,14 @@
+{
+    "ret": true,
+    "msg": "操作成功2",
+    "data": {
+        "title": "关于海大医院挂号购药的问题",
+        "answer": "校医院中午，晚上，节假日都只有一位值班医生，买其他科的药需要急诊挂号，否则属于跨科开药，违反执业医师法。今后同学若需要在值班时间来买药请先打电话84729628或84727025咨询。给患者带来不便还请谅解！投诉建议电话：84725616 院长李霞",
+        "positionx": null,
+        "positiony": null,
+        "telnumber": "84729628,84727025,84725616",
+        "businesscard": null,
+        "images":  ["../../content/style/white/xiaoyuanjingling/images/img-2.png","../../content/style/white/xiaoyuanjingling/images/img-1.png"]
+    },
+    "time": "\/Date(1503393230059)\/"
+}

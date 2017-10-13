@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .get,.post {
+        border:1px solid #000;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="get">
+        <p>get</p>
+        <form action="http://127.0.0.1:3000/process_get" method="GET">
+            First Name:
+            <input type="text" name="first_name"><br>
+            Last Name:
+            <input type="text" name="last_name"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="post">
+        <p>post</p>
+       <form action="/file_upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" size="50" />
+        <br />
+        <input type="submit" value="上传文件" />
+        </form>
+    </div>
+</body>
+
+</html>

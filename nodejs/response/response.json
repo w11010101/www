@@ -1,0 +1,31 @@
+{
+    "ret": true,
+    "msg": "操作成功",
+    "data":
+    {
+        "anwers": [
+        {
+            "id": "5996bef9fedadb27b80b93bc",
+            "title": "在食堂使用一卡通付费时，有时会出现卡机（不显示扣费和余额，仅显示一条横杠）的情况，食堂工作人员称这种情况“未成功付费”并要求重新刷卡，再次刷卡后确定余额为扣了2次费之后的余额，出现这类情况该如何解决",
+            "answer": "同学你好，两笔消费中有一笔是消费失败的，消费失败时一卡通卡余额扣钱，但一卡通的账户余额是不扣的，这笔钱还存在你的账户中，你持卡到一卡通中心处理时会根据账户余额将这笔钱写回卡中。如果同学自己没有发现这个问题，在丢卡后补卡或退卡时都会根据账户余额补回卡中。请同学放心，这些钱哪也没去，一直在你的账户余额中。如还有疑问请致电84723889",
+            "positionx": 123,
+            "positiony": 123,
+            "telnumber": "84723889",
+            "businesscard": null,
+            "images": "../../content/style/white/xiaoyuanjingling/images/map.png"
+        },
+        {
+            "id": "5996bef9fedadb27b80b93e6",
+            "title": "一卡通补办",
+            "answer": "请持卡人在挂失三天后携带有效身份证件及补卡工本费到网络信息中心楼大厅2号窗口进行办理，办理时间为工作日上午9:00到下午3:00，中午不休息",
+            "positionx": null,
+            "positiony": null,
+            "telnumber": null,
+            "businesscard": null,
+            "telnumber": "84723889,132321132",
+            "images": ["../../content/style/white/xiaoyuanjingling/images/img-2.png","../../content/style/white/xiaoyuanjingling/images/img-1.png"]
+        }],
+        "iscorrectanwers": false
+    },
+    "time": "/Date(1503392809347)/"
+}

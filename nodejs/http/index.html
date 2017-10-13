@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>index</title>
+</head>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑"
+}
+
+body {
+    padding: 10px;
+}
+
+h1 {
+    position: relative;
+    padding: 5px 0;
+    border-bottom: 2px solid #3c3c3c
+}
+
+p {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.box {
+    padding: 15px;
+    border: 2px solid #3c3c3c;
+    font-size: 0
+}
+
+img {
+    width: 48%;
+    display: inline-block;
+    margin:0 1%;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+}
+</style>
+
+<body>
+    <h1>标题</h1>
+    <p>加载图文混合的html!!</p>
+    <div class="box">
+        <img src="images/img-2.jpg">
+        <img src="images/img-3.jpg">
+    </div>
+    <p>—— 加载完成 ——</p>
+    <button>alert</button>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+// var btn = document.querySelector("button");
+// btn.addEventListener("click", function() {
+//     $.ajax({
+//         type: 'get',
+//         url: 'http://localhost:3000/firstExpress',
+//         success: function(data) {
+//             console.log(data);
+//         },
+//         error: function() {
+//             console.log('error');
+//         }
+//     })
+// })
+$("button").on("click",function(){
+    alert(123)
+})
+
+</script>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>index</title>
+</head>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑"
+}
+
+body {
+    padding: 10px;
+}
+
+h1 {
+    position: relative;
+    padding: 5px 0;
+    border-bottom: 2px solid #3c3c3c
+}
+
+p {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.box {
+    padding: 15px;
+    border: 2px solid #3c3c3c;
+    font-size: 0
+}
+
+img {
+    width: 31.33%;
+    display: inline-block;
+    margin:1%;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+}
+</style>
+
+<body>
+    <h1>标题</h1>
+    <p>加载图文混合的html!!</p>
+    <div class="box">
+        <!-- <img src="./showimg/img-5.jpg">
+        <img src="./showimg/img-6.jpg">
+        <img src="./showimg/img-7.jpg">
+        <img src="./showimg/img-8.jpg">
+        <img src="./showimg/img-9.jpg"> -->
+    </div>
+    <p>—— 加载完成 ——</p>
+    <button>alert</button>
+</body>
+<script type="text/javascript" src="E:/www/nodejs/plugin/jquery.min.js"></script>
+<script type="text/javascript">
+
+// var btn = document.querySelector("button");
+// btn.addEventListener("click", function() {
+//     alert(0);
+// });
+
+function fn1(event,param1,param2){
+
+    console.log(arguments);
+    console.log(event);
+    console.log(param1);
+    console.log(param2);
+
+}
+
+// function fn2(){
+//     console.log("fn2")   
+// }
+
+$("button").on("click",fn1)
+$("button").trigger("click",[1,2]);
+// function fib(max){
+//     var t,a=0,b=1,arr = [0,1];
+
+//     while(arr.length<max){
+//         t = a + b; 
+//         a = b;
+//         b = t;
+//         arr.push(t);
+//     }
+//     return arr;
+// }
+// console.log(fib(5));
+
+// function* fib(max) {
+//     var
+//         t,
+//         a = 0,
+//         b = 1,
+//         n = 1;
+//     while (n < max) {
+//         yield a;
+//         t = a + b;
+//         a = b;
+//         b = t;
+//         n ++;
+//     }
+//     return a;
+// }
+
+// var f =fib(5);
+// console.log(f.next());
+// console.log(f.next());
+// console.log(f.next());
+// console.log(f.next());
+// console.log(f.next());
+
+// console.log(f);
+
+// for (var x of fib(5)) {
+//     console.log(x); // 依次输出0, 1, 1, 2, 3
+// }
+
+// $("button").on("click",function (){
+//     alert(1)
+// });
+
+
+// $.ajax({
+//     type: 'get',
+//     url: 'http://localhost:3000/thridExpress',
+//     success: function(data) {
+//         console.dir(data);
+//     },
+//     error: function() {
+//         console.log('error');
+//     }
+// })
+// $.ajax({
+//     type: 'post',
+//     url: 'http://localhost:1000',
+//     success: function(data) {
+//         console.dir(data);
+//     },
+//     error: function() {
+//         console.log('error');
+//     }
+// })
+
+// var t0 = "abcd/efg/123132.png";
+// var t1 = "abc.gif";
+// var t2 = "abc.png";
+// var t3 = "abc.jpeg";
+
+// var re = /|\.jpg|\.png|\.jpeg|\.gif/g;
+
+// console.log(t0.match(re));
+// console.log(t1.match(re));
+// console.log(t2.match(re));
+// console.log(t3.match(re));
+
+
+
+
+</script>
+
+</html>
