@@ -1,0 +1,16 @@
+{
+  "name": "hello-koa2",
+  "version": "1.0.0",
+  "description": "Hello Koa 2 example with asyn",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "koa",
+    "async"
+  ],
+  "author": "w11010101",
+  "license": "Apache-2.0",
+  "dependencies": {}
+}

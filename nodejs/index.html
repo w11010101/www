@@ -89,40 +89,79 @@ $("button").on("click", function() {
 // console.log(gen.next())
 // console.log(gen.next())
 
-function* anotherGenerater(num){
-    for(let i = 0;i < 3;i++){
-        yield ++num;
-    }
-    console.log("anotherGenerater_num: ",num);
-}
-function* generator(num){
-    for(let i = 0;i < 3;i++){
-        console.log("i: ", i);
-        yield* anotherGenerater(++num);
-    }
-    yield num;
-    console.log("generator_num: ",num);
-}
-var gen = generator(5);
+// function* anotherGenerater(num){
+//     for(let i = 0;i < 3;i++){
+//         yield ++num;
+//     }
+//     console.log("anotherGenerater_num: ",num);
+// }
+// function* generator(num){
+//     for(let i = 0;i < 3;i++){
+//         console.log("i: ", i);
+//         yield* anotherGenerater(++num);
+//     }
+//     yield num;
+//     console.log("generator_num: ",num);
+// }
+// var gen = generator(5);
 
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
 
-console.log(gen.next().value);
-console.log(gen.next().done);
+// console.log(gen.next().value);
+// console.log(gen.next().done);
 
 
 // var arr = [1,2,3,4,5,6,7,8,9,0]
 // for(const i of arr){
 //     console.log(i)
 // }
+
+var obj = {
+    a:1,
+    b:2,
+    c:3
+}
+var obj2 = {
+    a:(num) =>{
+        return 11;
+    },
+    b:(num) =>{
+        return 22;
+    },
+    c1:(num) =>{
+        return 33;
+    }
+}
+var arr = [1,2,3,4];
+
+// for(let i in obj){
+//     console.log(`obj[${i}]: `,i);
+// }
+// console.log(" -------------------- ")
+// for(let i in arr){
+//     console.log(`arr[${i}]: `,i);
+// }
+console.log(obj2)
+for(let i of obj2){
+    console.log(i);
+}
+console.log(" -------------------- ")
+// for(let i of arr){
+//     console.log(`arr[${i}]: `,i);
+// }
+
+
+
+
+
 </script>
 
 </html>
