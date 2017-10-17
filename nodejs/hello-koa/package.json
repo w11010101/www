@@ -12,5 +12,13 @@
   ],
   "author": "w11010101",
   "license": "Apache-2.0",
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/w11010101/learn-node.git"
+  },
+  "dependencies": {
+    "koa": "2.3.0",
+    "koa-router": "7.0.0",
+    "body-parser": "1.18.2"
+  }
 }
