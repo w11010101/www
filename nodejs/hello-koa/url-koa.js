@@ -61,19 +61,4 @@ app.use(router.routes());
 app.listen(3000);
 console.log("app started at port 3000 ...");
 
-// 用户变量
-// C:\Users\Administrator\AppData\Roaming\npm;
-// E:\nodejs\node_globle\;
-// D:\Microsoft VS Code\bin
-// 系统变量
-// NODE_PATH = E:\nodejs\node_globle\node_modules
-// Path = %SystemRoot%\system32;
-//         %SystemRoot%;
-//         %SystemRoot%\System32\Wbem;
-//         %SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;
-//         arrow ;
-//         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;
-//         E:\svn\bin;
-//         E:\Git\cmd;
-//         E:\nodejs
 
