@@ -4,12 +4,13 @@ const controller = require("./controller");
 
 const app = new Koa();
 
-app.use(async (ctx, next) =>{
+app.use(async(ctx, next) => {
     console.log(`process ${ctx.request.method} ${ctx.request.url} ...`);
     await next();
 })
 
 app.use(bodyParser());
+
 
 // console.log(controller());
 app.use(controller());
