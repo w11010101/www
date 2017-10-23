@@ -48,6 +48,13 @@ button {
 </style>
 
 <body>
+    <ul>
+        <li>li li li li li li li li li </li>
+
+    </ul>
+    <p>p p p p p p p p p p p </p>
+    <div>div div div div div div div div </div>
+
     <h1>标题</h1>
     <p>加载图文混合的html!!</p>
     <div class="box">
@@ -59,17 +66,39 @@ button {
     </div>
     <p>—— 加载完成 ——</p>
     <button>alert</button>
+    <span> span onclick</span>
+    <br>
+    <table>
+        <tr>tr onclick</tr>
+    </table>
 </body>
-<script type="text/javascript" src="E:/www/nodejs/plugin/jquery.min.js"></script>
+<script type="text/javascript" src="./plugin/jquery.min.js"></script>
 <script type="text/javascript">
+var body = document.querySelector("body");
+var li = document.querySelector("li");
 
-// var btn = document.querySelector("button");
+var div = document.querySelector("div");
+
+var btn = document.querySelector("button");
 // btn.addEventListener("click", function() {
-//     alert(0);
+//     alert("button");
 // });
 
-function fn1(event,param1,param2){
+// div.addEventListener("click", function() {
+//     alert("div");
+// });
+// body.addEventListener("click", function() {
+//     alert("body");
+// });
+// li.addEventListener("click", function() {
+//     alert("li");
+// });
 
+$("span").on("click",function (){
+    alert("span")
+})
+function fn1(event,param1,param2){
+    alert("alert")
     console.log(arguments);
     console.log(event);
     console.log(param1);
@@ -82,7 +111,7 @@ function fn1(event,param1,param2){
 // }
 
 $("button").on("click",fn1)
-$("button").trigger("click",[1,2]);
+// $("button").trigger("click",[1,2]);
 // function fib(max){
 //     var t,a=0,b=1,arr = [0,1];
 

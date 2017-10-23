@@ -60,10 +60,23 @@ button {
 <script type="text/javascript" src="plugin/jquery.min.js"></script>
 <script type="text/javascript">
 var btn = document.querySelector("button");
-// btn.addEventListener("click", function() {
-//     alert(0);
-// })
-$("button").on("click", function() {
+var preventDefaultException = /^(INPUT|TEXTAREA|BUTTON|SELECT)$/;
+btn.addEventListener("click", function(e) {
+    var tagName = e.target.tagName;
+    console.log(!preventDefaultException.test(tagName));
+
+    if (!preventDefaultException.test(tagName)) {
+        if (tagName === 'A') {
+            var href = e.target.href;
+            if (!(href && ~href.indexOf('tel:'))) {
+                e.preventDefault();
+            }
+        } else {
+            e.preventDefault();
+        }
+    }
+})
+// $("button").on("click", function() {
     // $.ajax({
     //     type: 'get',
     //     url: 'http://localhost:3000/firstExpress',
@@ -74,7 +87,7 @@ $("button").on("click", function() {
     //         console.log('error');
     //     }
     // })
-})
+// })
 // function* idMaker(num){
 //     // console.log(arguments)
 //     // var index = arguments[0] || 0;
@@ -115,7 +128,7 @@ $("button").on("click", function() {
 // console.log(gen.next());
 // console.log(gen.next());
 
-// console.log(gen.next().value);
+
 // console.log(gen.next().done);
 
 
@@ -124,23 +137,23 @@ $("button").on("click", function() {
 //     console.log(i)
 // }
 
-var obj = {
-    a:1,
-    b:2,
-    c:3
-}
-var obj2 = {
-    a:(num) =>{
-        return 11;
-    },
-    b:(num) =>{
-        return 22;
-    },
-    c1:(num) =>{
-        return 33;
-    }
-}
-var arr = [1,2,3,4];
+// var obj = {
+//     a:1,
+//     b:2,
+//     c:3
+// }
+// var obj2 = {
+//     a:(num) =>{
+//         return 11;
+//     },
+//     b:(num) =>{
+//         return 22;
+//     },
+//     c1:(num) =>{
+//         return 33;
+//     }
+// }
+// var arr = [1,2,3,4];
 
 // for(let i in obj){
 //     console.log(`obj[${i}]: `,i);
@@ -149,18 +162,195 @@ var arr = [1,2,3,4];
 // for(let i in arr){
 //     console.log(`arr[${i}]: `,i);
 // }
-console.log(obj2)
-for(let i of obj2){
-    console.log(i);
-}
-console.log(" -------------------- ")
+// console.log(obj2)
+// for(let i of obj2){
+//     console.log(i);
+// }
+// console.log(" -------------------- ")
 // for(let i of arr){
 //     console.log(`arr[${i}]: `,i);
 // }
 
 
 
+data=[{
+            "name": "三国演义",
+            // "x": 0,
+            // y: 0,
+            
+            
+            
 
+        }, {
+            "name": "刘备2239",
+            
+            
+            
+            
+        }, {
+            "name": "使君70",
+            
+            
+            
+            
+        }, {
+            "name": "玄德1770",
+            
+            
+            
+            
+        }, {
+            "name": "皇叔112",
+            
+            
+            
+            
+        }, {
+            "name": "诸葛亮1892",
+            
+            
+            
+            
+        }, {
+            "name": "孔明1643",
+            
+            
+            
+            
+        }, {
+            "name": "卧龙40",
+            
+            
+            
+            
+        }, {
+            "name": "曹操979",
+            
+            
+            
+            
+        }, {
+            "name": "孟德29",
+            
+            
+            
+            
+        }, {
+            "name": "曹公44",
+            
+            
+            
+            
+        }, {
+            "name": "关羽948",
+            
+            
+            
+            
+        }, {
+            "name": "云长431",
+            
+            
+            
+            
+        }, {
+            "name": "关公508",
+            
+            
+            
+            
+        }, {
+            "name": "张飞408",
+            
+            
+            
+            
+        }, {
+            "name": "翼德55",
+            
+            
+            
+            
+        }, {
+            "name": "赵云393",
+            
+            
+            
+            
+        }, {
+            "name": "子龙95",
+            
+            
+            
+            
+        }, {
+            "name": "孙权390",
+            
+            
+            
+            
+        }, {
+            "name": "仲谋10",
+            
+            
+            
+            
+        }, {
+            "name": "吴侯72",
+            
+            
+            
+            
+        }, {
+            "name": "吕布384",
+            
+            
+            
+            
+        }, {
+            "name": "奉先15",
+            
+            
+            
+            
+        }, {
+            "name": "温侯12",
+            
+            
+            
+            
+        }, {
+            "name": "周瑜328",
+            
+            
+            
+            
+        }, {
+            "name": "公瑾60",
+            
+            
+            
+            
+        }, {
+            "name": "周郎35",
+            
+            
+            
+            
+        }, {
+            "name": "魏延327",
+            
+            
+            
+            
+        }, {
+            "name": "文长12",
+            
+            
+            
+            
+
+        }]
 
 </script>
 

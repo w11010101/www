@@ -25,7 +25,7 @@ module.exports = {
         })
     },
     showimg:function(req,res,img){
-        console.log(img)
+        // console.log(img)
         // res.writeHead(200,{'Content-Type':'text/html', 'Access-Control-Allow-Origin': '*','charset':'utf-8'});
         // res.write(this.toString());
         // res.end();
@@ -33,7 +33,7 @@ module.exports = {
         optfile.readImg(imgSrc+img,res);
     },
     plugin:function(req,res,js){
-        console.log(123132312312)
+        // console.log(123132312312)
         res.writeHead(200,{'Content-Type':'application/x-javascript', 'Access-Control-Allow-Origin': '*','charset':'utf-8'});
         recall = getRecall(req,res);
         optfile.readfile(jsFile+js,recall);

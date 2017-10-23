@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../plugin/echarts/smart-echarts.css">
+</head>
+<style type="text/css">
+    body{
+        margin:0;
+    }
+    .smart-bubble-chart{
+        height: 600px;
+    }
+</style>
+<body>
+    <div class="smart-bubble-chart">
+        
+    </div>
+</body>
+<script type="text/javascript" src="../plugin/jquery.min.js"></script>
+<script type="text/javascript" src="../plugin/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+function createNodes(count) {
+    var nodes = [];
+    for (var i = 0; i < count; i++) {
+        nodes.push({
+            id: i
+        });
+    }
+    return nodes;
+}
+
+function createEdges(count) {
+    var edges = [];
+    if (count === 2) {
+        return [
+            [0, 1]
+        ];
+    }
+    for (var i = 0; i < count; i++) {
+        edges.push([i, (i + 1) % count]);
+    }
+    return edges;
+}
+
+var datas = [];
+for (var i = 0; i < 16; i++) {
+    datas.push({
+        nodes: createNodes(i + 2),
+        edges: createEdges(i + 2)
+    });
+}
+
+option = {
+    series: datas.map(function(item, idx) {
+        console.log(item)
+        return {
+            type: 'graph',
+            layout: 'force',
+            animation: false,
+            data: item.nodes,
+            left: (idx % 4) * 25 + '%',
+            top: Math.floor(idx / 4) * 25 + '%',
+            width: '25%',
+            height: '25%',
+            force: {
+                // initLayout: 'circular'
+                // gravity: 0
+                repulsion: 100,
+                edgeLength: 5
+            },
+            edges: item.edges.map(function(e) {
+                return {
+                    source: e[0],
+                    target: e[1]
+                };
+            })
+        };
+    })
+};
+var myChart = echarts.init(document.querySelector(".smart-bubble-chart"));
+myChart.setOption(option);
+// console.info(datas);
+</script>
+</html>

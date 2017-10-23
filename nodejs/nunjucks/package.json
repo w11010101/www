@@ -1,0 +1,18 @@
+{
+  "name": "nunjucks",
+  "version": "1.0.0",
+  "description": "test nunjucks module",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "w11010101",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/w11010101/learn-node.git"
+  },
+  "dependencies": {
+    "nunjucks": "3.0.1"
+  }
+}
