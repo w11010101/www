@@ -45,6 +45,14 @@ button {
     height: 40px;
     font-size: 20px;
 }
+span,label,table{
+    height: 50px;
+    background: #787878;
+    display: block;
+    width: 200px;
+    margin: 20px 0;
+    cursor: pointer;
+}
 </style>
 
 <body>
@@ -66,11 +74,14 @@ button {
     </div>
     <p>—— 加载完成 ——</p>
     <button>alert</button>
-    <span> span onclick</span>
     <br>
-    <table>
-        <tr>tr onclick</tr>
-    </table>
+    <span> span onclick </span>
+    <br>
+    <label> label onclick </label>
+    <br>
+    <!-- <table>
+        <tr>tr onclick </tr>
+    </table> -->
 </body>
 <script type="text/javascript" src="./plugin/jquery.min.js"></script>
 <script type="text/javascript">
@@ -78,12 +89,14 @@ var body = document.querySelector("body");
 var li = document.querySelector("li");
 
 var div = document.querySelector("div");
+var span = document.querySelector("span");
+var label = document.querySelector("label");
+// var table = document.querySelector("table");
 
-var btn = document.querySelector("button");
-// btn.addEventListener("click", function() {
-//     alert("button");
-// });
-
+btn.addEventListener("click", fn1,false);
+span.addEventListener("click", fn1,false);
+label.addEventListener("click", fn1,false);
+// table.addEventListener("click", fn1,false);
 // div.addEventListener("click", function() {
 //     alert("div");
 // });
@@ -94,9 +107,9 @@ var btn = document.querySelector("button");
 //     alert("li");
 // });
 
-$("span").on("click",function (){
-    alert("span")
-})
+// $("span").on("click",function (){
+//     alert("span")
+// })
 function fn1(event,param1,param2){
     alert("alert")
     console.log(arguments);

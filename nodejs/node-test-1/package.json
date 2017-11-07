@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test npm init package.json",
+  "main": "test.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "w11010101",
+  "license": "ISC",
+  "dependencies":{
+
+  }
+}

@@ -25,13 +25,13 @@ var server = http.createServer(function (request, response) {
             post = querystring.parse(post);
             switch (post.type){
                 case "response":
-                    loadFile("response.json");
+                    loadFile("response/response.json");
                 break;
                 case "response1":
-                    loadFile("response1.json");
+                    loadFile("response/response1.json");
                 break;
                 case "response2":
-                    loadFile("response2.json");
+                    loadFile("response/response2.json");
                 break;
                 case "queries":
                     loadFile("json/queries.json");
@@ -168,8 +168,7 @@ var server = http.createServer(function (request, response) {
                     // loadFile("json/echarts.json");
                 break;
                 default :
-                    loadFile("response4.json");
-                    // loadFile(file);
+                    loadFile("response/response4.json");
                 break;
             }
         });

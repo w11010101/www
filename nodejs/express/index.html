@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    input[type=image]{
+        height: 100px;
+    }
+</style>
+<body>
+    <form action="http://localhost:8082/process_get" method="get">
+        First Name : <input type="text" name="first_name" id=""><br>
+        Last Name : <input type="text" name="last_name" id=""><br>
+        <input type="submit" value="Submit">
+        <!-- <input type="color" name="" id="">
+        <input type="date" name="" id="">
+        <input type="datetime" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <input type="email" name="" id="">
+        <input type="file" name="" id="">
+        <input type="image" src="../images/img-1.jpg" alt="">
+        <input type="month" name="" id="">
+        <input type="number" name="" id="">
+        <input type="password" name="" id="">
+        <input type="radio" name="" id="">
+        <input type="range" name="" id="">
+        <input type="reset" value="reset">
+        <input type="search" name="" id="">
+        <input type="tel" name="" id="">
+        <input type="time" name="" id="">
+        <input type="url" name="" id="">
+        <input type="week" name="" id=""> -->
+        
+    </form>
+</body>
+<script>
+    class Point {
+        // main(val) {
+        //     console.log(val * 10)
+        // }
+        constructor(){
+            // return Object.create(this);
+        }
+    }
+    // var point = new Point();
+    // console.log(point)
+    // console.log(point instanceof Point);
+
+    // Point.prototype.set = (val) =>{
+
+    // }
+    // console.log(typeof Point);
+    // console.log(Point === Point.prototype.constructor);
+    // var point = new Point();
+    // point.main(123)
+    
+    // Object.assign(Point.prototype,{
+    //     run(){},
+    //     fn(){},
+    //     main(val){
+    //         console.log(val*10000+11111111)
+    //     }
+    // });
+    // var keys = Object.keys(Point.prototype);
+    // var names = Object.getOwnPropertyNames(Point.prototype)
+    // point.main(123)
+    // console.log(names)
+    // for(let i in point){
+        // console.log(i);
+    // }
+
+    // const MyClass = class Me {
+    //     getClassName(){
+    //         return Me.name;
+    //     }
+    // }
+
+    // let inst = new MyClass();
+    // console.log(inst.getClassName())
+
+    let person = new class{
+        constructor(name){
+            this.name = name;
+        }
+        sayName(){
+            console.log(this.name);
+        }
+    }("张三")
+
+    console.log(person);
+
+    // new Foo(); // ReferenceError
+    // class Foo {}
+
+    {
+      let Foo = class {};
+      class Bar extends Foo {
+      }
+    }
+
+
+
+
+</script>
+</html>  

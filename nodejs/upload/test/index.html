@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>upload</title>
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/baguetteBox/css/baguetteBox.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../bin/css/popup.css">
+</head>
+<body  onload="loaded()" class="">
+    <nav>
+        <!-- <a href=""></a> -->
+        <h1 class="border-bottom">图片管理</h1>
+        <span class="nav-right" onclick="getImgsTool();">+</span>
+    </nav>
+    <div class="content" id="app">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#hot" data-toggle="tab">{{table.hot}}</a>
+            </li>
+            <li>
+                <a href="#down" data-toggle="tab">{{table.down}}</a>
+            </li>
+            <li>
+                <a href="#new" data-toggle="tab">{{table.new}}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="hot">
+                <div id="wrapper-1" class="baguetteBox-1">
+                    <div id="scroller-1">
+                        <div class="pullDown">下拉刷新...</div>
+                        <ul class="lists">
+                            <li>
+                                <a href="../bin/imgs/4.jpg"><img src="../bin/imgs/4.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/11.jpg"><img src="../bin/imgs/11.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/12.jpg"><img src="../bin/imgs/12.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/13.jpg"><img src="../bin/imgs/13.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/5.jpg"><img src="../bin/imgs/5.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/6.jpg"><img src="../bin/imgs/6.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/1.jpg"><img src="../bin/imgs/1.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/2.jpg"><img src="../bin/imgs/2.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/3.jpg"><img src="../bin/imgs/3.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/7.jpg"><img src="../bin/imgs/7.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/8.jpg"><img src="../bin/imgs/8.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/9.jpg"><img src="../bin/imgs/9.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/10.jpg"><img src="../bin/imgs/10.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/14.jpg"><img src="../bin/imgs/14.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/15.jpg"><img src="../bin/imgs/15.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pullUp">上拉加载...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="down">
+                <div id="wrapper-2" class="baguetteBox-2">
+                    <div id="scroller-2">
+                        <div class="pullDown">下拉刷新...</div>
+                        <ul class="lists">
+                            <li>
+                                <a href="../bin/imgs/9.jpg"><img src="../bin/imgs/9.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/10.jpg"><img src="../bin/imgs/10.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/11.jpg"><img src="../bin/imgs/11.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/1.jpg"><img src="../bin/imgs/1.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/2.jpg"><img src="../bin/imgs/2.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/3.jpg"><img src="../bin/imgs/3.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/4.jpg"><img src="../bin/imgs/4.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/5.jpg"><img src="../bin/imgs/5.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/6.jpg"><img src="../bin/imgs/6.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/7.jpg"><img src="../bin/imgs/7.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/8.jpg"><img src="../bin/imgs/8.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/12.jpg"><img src="../bin/imgs/12.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/13.jpg"><img src="../bin/imgs/13.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/14.jpg"><img src="../bin/imgs/14.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/15.jpg"><img src="../bin/imgs/15.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pullUp">上拉加载...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="new">
+                <div id="wrapper-3" class="baguetteBox-3">
+                    <div id="scroller-3">
+                        <div class="pullDown">下拉刷新...</div>
+                        <ul class="lists">
+                            <li>
+                                <a href="../bin/imgs/1.jpg"><img src="../bin/imgs/1.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/2.jpg"><img src="../bin/imgs/2.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/3.jpg"><img src="../bin/imgs/3.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/4.jpg"><img src="../bin/imgs/4.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/5.jpg"><img src="../bin/imgs/5.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/6.jpg"><img src="../bin/imgs/6.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/7.jpg"><img src="../bin/imgs/7.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/8.jpg"><img src="../bin/imgs/8.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/9.jpg"><img src="../bin/imgs/9.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/10.jpg"><img src="../bin/imgs/10.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/11.jpg"><img src="../bin/imgs/11.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/12.jpg"><img src="../bin/imgs/12.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/13.jpg"><img src="../bin/imgs/13.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/14.jpg"><img src="../bin/imgs/14.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../bin/imgs/15.jpg"><img src="../bin/imgs/15.jpg" alt=""></a>
+                                <div class="img-state">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pullUp">上拉加载...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form>
+        <input type="file" name="" style="opacity:0" class="">
+    </form>
+</body>
+<script type="text/javascript" src="../bin/plugin/jq/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/baguetteBox/js/baguetteBox.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/vue/vue.js"></script>
+<script type="text/javascript" src="../bin/plugin/iscroll/iscroll-probe.js"></script>
+<script type="text/javascript" src="../bin/js/pull.js"></script>
+<script type="text/javascript" src="../bin/js/popup.js"></script>
+<script type="text/javascript" src="../bin/js/common.js"></script>
+<script type="text/javascript" src="../bin/js/index.js"></script>
+<script type="text/javascript">
+    
+</script>
+</html>
