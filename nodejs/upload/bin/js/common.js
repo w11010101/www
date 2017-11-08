@@ -74,7 +74,3 @@ function getImgsTool(){
         }
     })
 }
-// 监听 input file change 变化
-$("input[type=file]").on("change",function (){
-    console.log(this.value)
-})

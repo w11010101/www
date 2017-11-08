@@ -29,10 +29,75 @@ nav h1{
     text-align:center;
     font-size: .4rem;
 }
+.nav-tabs .nav-tabs-right{
+    float:right;
+}
+input[type=button]{
+    display: block;
+    font-size: .16rem;
+    width: 1rem;
+    height: .5rem;
+    border:1px solid #00BFFF;
+    border-radius:.05rem;
+    
+    background: #00BFFF;
+    color:#fff;
+    margin: .1rem auto;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+input[type=button]:hover{
+    background: #009ad6; 
+    border-color:#009ad6;
+    color:#fff; 
+    cursor: pointer;
+}
+.uploadBtn:after{
+    content:"添加图片";
+    position: absolute;
+    height: .16rem;
+    line-height: .16rem;
+    top:50%;
+    left:50%;
+    margin: -.08rem 0 0 -.32rem;
+}
+input[type=file]{
+    opacity: 0;
+}
+.imgBox {
+    display: inline-block;
+    position: relative;
+    width:60%;
+    font-size: 0;
+    margin: .1rem 0;
+}
+form{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+.imgBoxList{
+    font-size: 0;
+    padding:.1rem;
+    height: 3.2rem;
+    min-height: 50%;
+    overflow-x: hidden;
+    border:2px solid #A9A9A9;
+    border-radius:.02rem;
+}
+.imgBoxList li{
+    display: inline-block;
+    margin-bottom: .1rem; 
+    width: calc(100% /4);
+    height: calc(100% / 4);
+    text-align: center;
+}
+.imgBoxList li img{
+   /* display: block;
+    margin: 0 auto;*/
+    height: 100%;
 
-
-
-
+}
 /* iscroll5 css*/
 
 #wrapper-1,
@@ -111,8 +176,8 @@ nav h1{
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{color:#fff;
     color:#fff;
-    border-color: #87CEFA; 
-    background: #87CEFA;
+    border-color: #00BFFF; 
+    background: #00BFFF;
 }
 
 .img-state{
@@ -146,11 +211,19 @@ nav h1{
     html{
         font-size: calc(100vw / 3.2);
     }
+    .imgBoxList li{
+        width: calc(100% / 3);
+        height: calc(100% / 3);
+    }
 }
 
 @media screen and (min-width: 321px) and (max-width: 375px) {
     html{
         font-size: calc(100vw / 3.75);
+    }
+    .imgBoxList li{
+        width: calc(100% / 3);
+        height: calc(100% /3);
     }
 }
 @media screen and (min-width: 376px) and (max-width: 414px) {

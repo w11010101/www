@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>upload</title>
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/baguetteBox/css/baguetteBox.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/css/index.css">
+</head>
+<body  class="">
+    <div>
+        <form>
+            <input type="button" name="" value="添加图片" class="addBtn">
+            <input type="button" name="" value="开始上传" class="uploadBtn">
+            <input type="file" name="" multiple="true" accpet="image/gif,image/png,image/jpeg,image/jpg,image/bmp" >
+        </form>
+        <div class="imgBox baguetteBox">
+            
+            
+            <ul class="imgBoxList">
+                <li><img src="../bin/imgs/1.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/16.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/17.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/18.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/19.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/20.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/11.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/9.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/12.jpg" alt=""><span></span></li>
+                <li><img src="../bin/imgs/7.jpg" alt=""><span></span></li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="../bin/plugin/jq/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/baguetteBox/js/baguetteBox.min.js"></script>
+<!-- <script type="text/javascript" src="../bin/plugin/vue/vue.js"></script> -->
+
+<script type="text/javascript" src="../bin/js/common.js"></script>
+<!-- <script type="text/javascript" src="../bin/js/index.js"></script> -->
+<script type="text/javascript">
+    // 监听 input file change 变化
+    $("input[type=file]").on("change",function (e){
+        var file = this.value;
+        // var re = /\\/;
+        // console.log(file.match(re))
+        // var arr = file.split('\\');
+        // arr.splice(arr.length-1,1)
+        // var fileName = arr.join("\\");
+        // console.log(getObjectURL(this.files[0]))
+        // console.log(window.URL.createObjectURL(file))
+        // var fileArr = $.map(this.files,function (e,i){
+        //     // console.log("e : ", e)
+        //     return e;
+        // })
+        // console.log(fileArr)
+        for(var f of this.files){
+            // showImgs(fileName+"\\"+f.name);
+            showImgs(getObjectURL(f));
+        }
+        
+    })
+
+    $(".addBtn").on("click",function(){
+        return $("input[type=file]").click();
+    })
+
+    function showImgs(file){
+        var li = `<li><img src="${file}" alt=""><span></span></li>`;
+        $(".imgBoxList").append(li);
+        // console.log(file);
+    }
+
+     function getObjectURL(file) {
+        var url = null;
+        if (window.createObjcectURL != undefined) {
+            url = window.createOjcectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+    $(".imgBox").on('change',function(){
+        console.dir(this);
+    })
+</script>
+</html>
