@@ -10,30 +10,39 @@ var obj = {
     }
 }
 
-var myScroll;
 var myScrollObj = {}
 
-function scrollFn(id,i){
+function scrollFn(id){
     let scrollObj;
-
-    if(myScrollObj[i]){
-        scrollObj = myScrollObj[i];
+    let name = id.substr(1);
+    if(myScrollObj[name]){
+        // 有
+        scrollObj = myScrollObj[name];
     } else {
-        myScroll = new IScroll(id, {
+        // 没有
+        scrollObj = new IScroll(id, {
             scrollbars: false,
             probeType: 3, 
             mouseWheel: true
         });
-
-        scrollObj = myScroll;
+        myScrollObj[name] = scrollObj;
+        // 懒加载
+        runLazyload($(scrollObj.scroller));
     }
-    runIScroll.run({
-        el:scrollObj
-    })
+
+    console.log(myScrollObj)
+
+    // scrollObj.refresh(true);
+    
+    // 上下滚动
+    // runIScroll.run({
+    //     el:scrollObj
+    // });
+    
     return scrollObj;
 }
 function loaded () {
-    myScrollObj["wrapper-1"] = scrollFn("#wrapper-1");
+    scrollFn(".wrapper");
     baguetteBox.run('.baguetteBox-1');
 }
 
@@ -54,7 +63,8 @@ $(function (){
         
         activeWrapper = activeObj[0].id;
         activeBaguetteBoxs = activeObj[0].className;
-        myScrollObj[activeWrapper] = scrollFn("#"+activeWrapper,activeWrapper);
+        myScrollObj[activeWrapper] = scrollFn("#"+activeWrapper);
+        // 图片预览
         baguetteBox.run('.'+activeBaguetteBoxs);
 
     });  
@@ -63,14 +73,29 @@ $(function (){
 
 })
 // 获取图片
-function getImgsTool(){
-    myPopup.popup({
-        value:["相机","本地图片"],
-        type:"select",
-        cancel:true
-    },function(e){
-        if(e.name == "本地图片"){
-            return $("input[type=file]").click();
-        }
-    })
+// function getImgsTool(){
+//     myPopup.popup({
+//         value:["相机","本地图片"],
+//         type:"select",
+//         cancel:true
+//     },function(e){
+//         if(e.name == "本地图片"){
+//             return $("input[type=file]").click();
+//         }
+//     })
+// }
+
+
+// 懒加载
+
+function runLazyload(containerObj){
+    $("img").lazyload({
+        effect : "fadeIn",
+        // threshold : 200,
+        failurelimit :5,
+        container:containerObj,     // 滚动对象
+        // load:function(i,e){
+        //     console.log(e)
+        // }
+    });
 }
