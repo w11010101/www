@@ -29,11 +29,12 @@
             </div>
         </div>
     </div>
-    <form action="http://172.16.15.99:8081/upload_imgs" method = "get">
-        <input type="button" name="button" value="添加图片" class="addBtn">
-        <input type="submit" name="submit" value="开始上传" class="uploadBtn">
-        <input type="text" name="text" value="输入框">
-        <input type="file" name="file" multiple="true" accpet="image/gif,image/png,image/jpeg,image/jpg,image/bmp" >
+    <form action="http://172.16.15.99:8081/upload_imgs" method="post" enctype="multipart/form-data">
+        <!-- <input type="button" name="button" value="添加图片" class="addBtn"> -->
+        <a class="addBtn">
+            <input type="file" name="file" class="upload-file" multiple="true" />
+        </a>
+        <input type="submit" name="submit" value="开始上传" class="uploadBtn" /> 
     </form>
 </body>
 <script type="text/javascript" src="/plugin/jq/jquery-3.2.1.min.js"></script>
@@ -44,18 +45,18 @@
 <script type="text/javascript" src="/js/common.js"></script>
 <script type="text/javascript">
     // 监听 input file change 变化
-    $("input[type=file]").on("change",function (e){
+    $(".upload-file").on("change",function (e){
         var file = this.value;
 
         for(var f of this.files){
             addImgs(getObjectURL(f));
         }
-        var imgArr = [];
-        $("img").each(function(i,e){
-           imgArr.push(e.dataset.original);
-        })
-        console.log(imgArr)
-        $("input[type=file]").attr("date-imgs",imgArr.join("|"));
+        // var imgArr = [];
+        // $("img").each(function(i,e){
+        //    imgArr.push(e.dataset.original);
+        // })
+        // console.log(imgArr)
+        // $(".upload-file").attr("date-imgs",imgArr.join("|"));
         baguetteBox.run('.baguetteBox');
         runLazyload($(".imgBoxList"));
         setTimeout(function(args) {
@@ -65,9 +66,9 @@
         
     })
     // 
-    $(".addBtn").on("click",function(){
-        return $("input[type=file]").click();
-    })
+    // $(".addBtn").on("click",function(){
+    //     return $("input[type=file]").click();
+    // })
     // 添加图片 
     function addImgs(file){
         var li = `<li>
