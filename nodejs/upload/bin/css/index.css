@@ -85,7 +85,9 @@ input[type=button]:hover,input[type=submit]:hover,.addBtn:hover{
 }
 .imgBox {
     width:90%;
-    height: 4rem;
+    min-height: 3rem;
+    height: calc(100vh - 1rem);
+    max-height: calc(100vh - 1rem);
     font-size: 0;
     margin: .2rem auto;
     border:2px solid #A9A9A9;

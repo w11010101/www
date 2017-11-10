@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>upload</title>
-    <link rel="stylesheet" type="text/css" href="/plugin/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/plugin/baguetteBox/css/baguetteBox.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/plugin/baguetteBox/css/baguetteBox.min.css">
+    <link rel="stylesheet" type="text/css" href="../bin/css/index.css">
 </head>
 <body onload="loaded()" class="">
    
@@ -15,48 +15,41 @@
         <div id="wrapper" class="wrapper">
             <div id="scroller">
                 <ul class="imgBoxList">
-                    <!-- <li><img src="/imgs/1.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/16.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/17.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/18.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/19.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/20.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/11.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/9.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/12.jpg" alt=""><span></span></li>
-                    <li><img src="/imgs/7.jpg" alt=""><span></span></li> -->
+                    <li><img src="../bin/imgs/1.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/22.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/17.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/23.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/19.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/24.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/25.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/26.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/12.jpg" alt=""><span></span></li>
+                    <li><img src="../bin/imgs/7.jpg" alt=""><span></span></li>
                 </ul>
             </div>
         </div>
     </div>
-    <form action="http://172.16.15.99:8081/upload_imgs" method="post" enctype="multipart/form-data">
-        <!-- <input type="button" name="button" value="添加图片" class="addBtn"> -->
+    <form action="/upload_imgs" method="post" enctype="multipart/form-data">
         <a class="addBtn">
-            <input type="file" name="file" class="upload-file" multiple="true" />
+            <input type="file" name="image" class="upload-file" multiple="true" />
         </a>
-        <input type="submit" name="submit" value="开始上传" class="uploadBtn" /> 
+        <input type="submit" name="submit" value="开始上传" class="uploadBtn"  /> 
     </form>
 </body>
-<script type="text/javascript" src="/plugin/jq/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/plugin/jq/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/plugin/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/plugin/baguetteBox/js/baguetteBox.min.js"></script>
-<script type="text/javascript" src="/plugin/iscroll/iscroll-probe.js"></script>
-<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="../bin/plugin/jq/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/jq/jquery.form.js"></script>
+<script type="text/javascript" src="../bin/plugin/jq/jquery.lazyload.js"></script>
+<script type="text/javascript" src="../bin/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/baguetteBox/js/baguetteBox.min.js"></script>
+<script type="text/javascript" src="../bin/plugin/iscroll/iscroll-probe.js"></script>
+<script type="text/javascript" src="../bin/js/common.js"></script>
 <script type="text/javascript">
     // 监听 input file change 变化
     $(".upload-file").on("change",function (e){
         var file = this.value;
-
         for(var f of this.files){
             addImgs(getObjectURL(f));
         }
-        // var imgArr = [];
-        // $("img").each(function(i,e){
-        //    imgArr.push(e.dataset.original);
-        // })
-        // console.log(imgArr)
-        // $(".upload-file").attr("date-imgs",imgArr.join("|"));
         baguetteBox.run('.baguetteBox');
         runLazyload($(".imgBoxList"));
         setTimeout(function(args) {
@@ -64,11 +57,15 @@
         }, 100);
 
         
-    })
-    // 
-    // $(".addBtn").on("click",function(){
-    //     return $("input[type=file]").click();
-    // })
+    });
+
+    $("form").ajaxForm(function(data){  
+        console.log(data);
+        
+        if(!data.err){  
+            alert("上传成功！");     
+        }  
+    });     
     // 添加图片 
     function addImgs(file){
         var li = `<li>

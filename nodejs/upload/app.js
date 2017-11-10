@@ -7,7 +7,7 @@ var multer = require('multer');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(multer({ dest: '/tmp/' }).array('image'));
+app.use(multer({ dest: '/doc/uploaded/' }).array('images'));
 
 app.get("/upload", function (req, res) {
     res.sendFile(__dirname + "/app.html");
@@ -17,22 +17,24 @@ app.get("/upload", function (req, res) {
 app.post('/file_upload', function (req, res) {
 
     console.log(req.files);  // 上传的文件信息
+    for(var f of req.files){
+        var des_file = __dirname + "/" + f.originalname;
+        fs.readFileSync(f.path, function (err, data) {
 
-    var des_file = __dirname + "/" + req.files[0].originalname;
-    fs.readFile(req.files[0].path, function (err, data) {
-        fs.writeFile(des_file, data, function (err) {
-            if (err) {
-                console.log(err);
-            } else {
-                response = {
-                    message: 'File uploaded successfully',
-                    filename: req.files[0].originalname
-                };
-            }
-            console.log(response);
-            res.end(JSON.stringify(response));
+            fs.writeFileSync(des_file, data, function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response = {
+                        message: 'File uploaded successfully',
+                        filename: f.originalname
+                    };
+                }
+                console.log(response);
+                res.end(JSON.stringify(response));
+            });
         });
-    });
+     }
 })
 
 var server = app.listen(8081, function () {
