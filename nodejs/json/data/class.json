@@ -1,0 +1,16 @@
+{
+    "ret":true,
+    "data": [
+    {
+        "id": "598a74e93caa2a1c7c000eb8",
+        "name": "学习类"
+    },
+    {
+        "id": "598a74e93caa2a1c7c000eba",
+        "name": "教务类"
+    },
+    {
+        "id": "598a74e93caa2a1c7c000ebc",
+        "name": "就业类"
+    }]
+}

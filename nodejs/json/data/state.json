@@ -1,0 +1,19 @@
+{
+    "ret": true,
+    "data": [
+    {
+        "Name": "Default",
+        "Desc": "全部",
+        "Val": 0
+    },
+    {
+        "Name": "Waite",
+        "Desc": "未回答",
+        "Val": 1
+    },
+    {
+        "Name": "Done",
+        "Desc": "已回答",
+        "Val": 2
+    }]
+}

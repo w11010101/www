@@ -1,0 +1,33 @@
+{
+    "states": [{
+            "key": 0,
+            "value": "全部"
+        }, {
+            "key": 1,
+            "value": "未回答"
+        }, {
+            "key": 2,
+            "value": "已回答"
+        }],
+    "types": [{
+            "categorys": [{
+                    "key": "598a74e93caa2a1c7c000eb8",
+                    "value": "学习类"
+                }, {
+                    "key": "598a74e93caa2a1c7c000eba",
+                    "value": "教务类"
+                }, {
+                    "key": "598a74e93caa2a1c7c000ebc",
+                    "value": "就业类"
+                }],
+            "key": 0,
+            "value": "校园精灵"
+        }, {
+            "categorys": [{
+                    "key": "59ffbbe409e5ad2aa0bd7b11",
+                    "value": "666777"
+                }],
+            "key": 1,
+            "value": "意见反馈"
+        }]
+}

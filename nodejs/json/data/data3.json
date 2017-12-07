@@ -1,0 +1,15 @@
+{
+    "data": [
+    {
+        "q": "就是一个常量，scale和alpha都是要根据z轴来调整的In the example shown here, the constructor accepts a string that represent the superclass name.",
+        "a": "I add a string name and port class variable and then two functions: a constructor and the server.",
+        "state": true,
+        "time": "2017/12/12 12:12"
+    },
+    {
+        "q": "jsDelivr CDN 的 https://cdn.jsdelivr.net/npm/vue 默认文件就是运行时 + 编译器的 UMD 构建 (vue.js)。 ",
+        "a": "",
+        "state": false,
+        "time": "2017/13/13 13:13"
+    }]
+}

@@ -1,0 +1,14 @@
+{
+    "ret":true,
+    "data": [
+    {
+        "Name": "Fairy",
+        "Desc": "校园精灵",
+        "Val": 0
+    },
+    {
+        "Name": "Feedback",
+        "Desc": "意见反馈",
+        "Val": 1
+    }]
+}
