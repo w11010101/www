@@ -20,25 +20,24 @@
 }
 .person-lists li .head-img{
   display: inline-block;
-  width: .5rem;
+  width: .56rem;
   height: 100%;
   vertical-align: top;
-  margin-left: .05rem;
 }
 .head-img img{
-  width: .3rem;
-  height: .3rem;
+  width: .26rem;
+  height: .26rem;
   display: block;
-  margin:.06rem auto;
+  margin:.08rem .15rem;
 }
 .head-name{
-  width: calc(100vw - .55rem);
+  width: calc(100vw - .61rem);
   display: inline-block;
   height: 100%;
 
 }
 .head-name h2{
-  font-size: .15rem;
+  font-size: .16rem;
   line-height: .25rem;
   color:rgb(51,51,51);
 }

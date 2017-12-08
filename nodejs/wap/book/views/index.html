@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1.0" />
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>图书馆</title>
     <link href="../content/css/pull.css" rel="stylesheet">
@@ -50,7 +51,7 @@
                 <div class="replies-container">
                     <!-- 互动 -->
                     <div class="interact">
-                      <span class="laud icon-laud-gray">赞</span>
+                      <span class="laud laudBtn icon-laud-gray">赞</span>
                       <span class="person">
                         <img src="../content/images/head-1.png" alt="">
                         <img src="../content/images/head-2.png" alt="">
@@ -65,7 +66,7 @@
                       </a>
                     </div>
                     <!-- 评论 -->
-                    <div class="comment">
+                    <div class="comment comment-list">
                       <h2>评论  (15)</h2>
                       <ul>
                         <li>
@@ -73,7 +74,7 @@
                             <h3>
                               <img src="../content/images/head-2.png" alt="">
                               <em>廖凡</em>
-                              <i class="comment-laud-btn icon-laud">16</i>
+                              <i class="comment-laud-btn laudBtn icon-laud">16</i>
                             </h3>
                             <p>行www.baidu.com,催生了www.baidu.comw ww.baidu.com互联网与www.baidu.com学习。www.baidu.com</p>
                             <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
@@ -84,14 +85,14 @@
                             <h3>
                               <img src="../content/images/head-3.png" alt="">
                               <em>廖凡</em>
-                              <i class="comment-laud-btn icon-laud">16</i>
+                              <i class="comment-laud-btn laudBtn icon-laud">16</i>
                             </h3>
                             <p>的方式不适合拷贝大文件，内存会爆仓。对于大文件，我们只能读一点写一点，直到完成拷贝。因此上边的程序需要改造如下r fs = require('fs');function copy(src, dst) fs.createReadStream(src).pipe(fs.createWriteStream(dst));},催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习。</p>
                             <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
                           </div>
                           <div class="comment-sub-box">
                             <p><em>夏天的风：</em>催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习</p>
-                            <a class="">共6条回复></a>
+                            <a href="reply.html">共6条回复></a>
                           </div>
                         </li>
                         <li>
@@ -99,7 +100,7 @@
                             <h3>
                               <img src="../content/images/head-5.png" alt="">
                               <em>廖凡</em>
-                              <i class="comment-laud-btn icon-laud">16</i>
+                              <i class="comment-laud-btn laudBtn icon-laud">16</i>
                             </h3>
                             <p>行业发展带来的复合型人才需求,催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习。</p>
                             <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
@@ -114,7 +115,7 @@
     <div class="nav-foot">
         <ul>
             <li>
-              <a href="#n" class="essay-laud-btn icon-laud" onclick="clickLaudFn(this);">
+              <a href="#n" class="essay-laud-btn laudBtn icon-laud" onclick="clickLaudFn(this);">
                 <span class="statis">15</span>
               </a>
             </li>
@@ -133,110 +134,29 @@
             </li>
         </ul>
     </div>
-    <!-- 遮罩层 -->
-    <div class="popover-mask" onclick="hideFn();"></div>
     <!-- 回复输入框 -->
     <div class="input-container">
-      <!-- <form> -->
+      <form action="">
         <div class="input-box">
-          <input type="text" name="" autofocus="autofocus">
-          <button class="sendBtn" onclick='$(".input-container").hide(0);' >发表</button>
+          <input type="text" name="">
+          <button class="sendBtn">发表</button>
         </div>
-      <!-- </form> -->
-    </div>
-    <!-- 回复列表 -->
-    <div class="window">
-      <nav class="navbar">
-        <!-- 导航 -->
-        <div class="navbar-header">
-            <a class="navbar-left navbar-close icon-close"></a>
-            <h1>6条回复</h1>
-        </div>
-      </nav>
-      <div class="content">
-        <div id="windowWrapper">
-              <!-- 回复 container-->
-            <ul>
-              <div class="replies-container">
-                  <div class="comment-main">
-                    <div class="comment-box">
-                      <h3>
-                        <img src="../content/images/head-2.png" alt="">
-                        <em>廖凡</em>
-                        <i class="comment-laud-btn icon-laud">16</i>
-                      </h3>
-                      <p>业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的业发展带来的</p>
-                      <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
-                      <!-- 点赞人数 -->
-                      <div class="interact-person-box"> 
-                        <ul>
-                          <li><a href="#n"><img src="../content/images/head-1.png"></a></li>
-                          <li><a href="#n"><img src="../content/images/head-2.png"></a></li>
-                          <li><a href="#n"><img src="../content/images/head-3.png"></a></li>
-                          <li><a href="#n"><img src="../content/images/head-4.png"></a></li>
-                          <li><a href="#n"><img src="../content/images/head-5.png"></a></li>
-                        </ul>
-                        <a href="#n" class="interact-persons">100人赞过 ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- 评论 -->
-                  <div class="comment">
-                    <h2><em>全部回复</em></h2>
-                    <ul>
-                      <li>
-                        <div class="comment-box">
-                          <h3>
-                            <img src="../content/images/head-2.png" alt="">
-                            <em>廖凡</em>
-                            <i class="comment-laud-btn icon-laud">16</i>
-                          </h3>
-                          <p>行业发展带来的复合型人才需求,sdfasdfasdfasdf asdf  sdf asdf asd asdf asdf asdf asdf ,而作为互联网与金融复合型人才学习。</p>
-                          <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="comment-box">
-                          <h3>
-                            <img src="../content/images/head-3.png" alt="">
-                            <em>廖凡</em>
-                            <i class="comment-laud-btn icon-laud">16</i>
-                          </h3>
-                          <p>行业发展带来的复合型人才需求,催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习。</p>
-                          <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
-                        </div>
-                        <div class="comment-sub-box">
-                          <p><em>夏天的风：</em>催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习</p>
-                          <a class="">共6条回复></a>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="comment-box">
-                          <h3>
-                            <img src="../content/images/head-5.png" alt="">
-                            <em>廖凡</em>
-                            <i class="comment-laud-btn icon-laud">16</i>
-                          </h3>
-                          <p>行业发展带来的复合型人才需求,催生了腾讯金融学院的落地,而作为互联网与金融复合型人才学习。</p>
-                          <div><em>刚刚·<a class="replyBtn">回复</a></em></div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>  
-              </div>
-            </ul>
-        </div>
-      </div>
+      </form>
     </div>
     <!-- 悬浮分享按钮 -->
-    <div class="laud-btn">
+    <div class="share-btn">
       <a class="icon-share" href="#n">
       </a>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../content/plugin/jquery/jquery-3.2.1.min.js"></script>
     <script src="../content/plugin/iscroll4/js/iscroll.js"></script>
-    <script src="../content/plugin/iscroll4/js/pullToRefresh.js"></script>
     <script src="../content/js/index.js"></script>
+    <script type="text/javascript">
+      myScroll = new iScroll('wrapper', {
+          vScrollbar: false,
+          checkDOMChanges:true
+      });
+    </script>
 </body>
 </html>

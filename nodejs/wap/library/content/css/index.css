@@ -7,6 +7,13 @@ html *{
     margin: 0;
     list-style:none;
     font-style:normal;
+    font-weight: normal;
+    text-decoration: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 img{
     height: 50%;
@@ -19,7 +26,9 @@ input,button{
 /* navbar */
 .navbar {
     height: .45rem;
-    margin: 0
+    margin: 0;
+    background: #fff;
+    position: relative;
 }
 .navbar h1{
     height: .45rem;
@@ -28,6 +37,13 @@ input,button{
     line-height: .45rem;
     padding: 0 .45rem;
     overflow: hidden;
+}
+.navbar h1 img{
+    width: .18rem;
+    height: .18rem;
+    margin-top: -.03rem;
+    margin-right: .092rem;
+    vertical-align: middle;
 }
 .navbar-header{
     position: relative;
@@ -66,32 +82,7 @@ input,button{
     text-align: center;
     line-height: .45rem;
 }
-/* 弹出层 */
-.navbar-popover{
-    position: absolute;
-    top:0;
-    right: 0;
-    width: .45rem;
-    height:.45rem;
-    padding: 0;
-    font-size:.14rem;
-    color:rgb(203,203,203);
-    text-align: center;
-    line-height: .45rem;
-    background: none;
-    border:0;
 
-}
-.btn-warning.focus, 
-.btn-warning:focus,
-.btn-warning:hover,
-.btn-warning.active, .btn-warning:active, .open>.dropdown-toggle.btn-warning,
-.btn-warning.active.focus, .btn-warning.active:focus, .btn-warning.active:hover, .btn-warning:active.focus, .btn-warning:active:focus, .btn-warning:active:hover, .open>.dropdown-toggle.btn-warning.focus, .open>.dropdown-toggle.btn-warning:focus, .open>.dropdown-toggle.btn-warning:hover{
-    color:rgb(203,203,203);
-    background: none;
-    border:0;
-    box-shadow: none;
-}
 .popover {
     max-width: 98%;
     width: 100%;
@@ -112,9 +103,10 @@ input,button{
     border:0;
 }
 .popover-content div{
+    height: .5rem;
+    line-height: .5rem;
     font-size: .15rem;
     color:rgb(51,51,51);
-    padding: .12rem;
     padding-left: .45rem; 
     position: relative;
     overflow: hidden;
@@ -122,7 +114,7 @@ input,button{
     -webkit-transition: all .2s ease-in;
 }
 .popover-content div:after,
-.input-container .input-box:after,
+.input-container .input-box:after,*/
 .comment-main:after{
     content: " ";
     position: absolute;
@@ -158,63 +150,71 @@ input,button{
     overflow: hidden;
 }
 .content h1{
-    font-size: .18rem;
-    line-height: .26rem;
+    font-size: .22rem;
+    line-height: .32rem;
     color:rgb(51,51,51);
-    margin-bottom: .1rem;
+    font-weight: 600;
 }
 .essay-container{
     margin:0;
-    padding-bottom: .2rem;
+    padding-bottom: .24rem;
     position: relative;
 
 }
 .essay-container > div{    
-    height: .45rem;
-    font-size: .15rem;
-    line-height: .45rem;
+    height: .18rem;
+    font-size: .13rem;
+    line-height: .18rem;
+    margin: .24rem 0;
+
 }
 .essay-container > div img{
     width: .18rem;
     height: .18rem;
     margin-right: .05rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 .essay-container > div em{
     vertical-align: middle;
 }
 .essay-container > div em.time{
     float:right;
+    font-size: .13rem;
     color:rgb(153,153,153);
 }
 .essay-container h3{
     font-size: .16rem;
     color:#000;
-    margin-top: .25rem;
+    margin-top: .2rem;
+    margin-bottom: .1rem;
+    font-weight: 600;
+    color:rgb(85,85,85);
 }
 .inset-box{
     display: block;
-    margin-bottom: .1rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
 }
 .inset-box .inset{
     display: block;
     width: 100vw;
-    height: 2.8rem;
     margin-left: -.15rem;
     margin-right: -.1rem;
-    margin-top: .15rem;
-    
 }
 .essay-container .inset-box p{
     text-align: center;
     color: rgb(85,85,85);
-    padding-bottom: 0;
-    font-size: .15rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    height:.22rem;
+    line-height: .22rem;
+    font-size: .16rem;
 }
 .essay-container p {
     color:rgb(85,85,85);
-    font-size: .15rem;
-    line-height: .25rem;
-    padding: .1rem 0 ;
+    font-size: .16rem;
+    line-height: .3rem;
     text-align: justify;
     word-wrap: break-word;
 }
@@ -222,7 +222,7 @@ input,button{
     content: " ";
     position: absolute;
     width: 44%;
-    bottom:.05rem;
+    bottom:0;
     left:calc(50% - 22%);
     background: rgb(216,216,216);
     height: 1px;
@@ -236,9 +236,9 @@ input,button{
 /*interact 点赞 互动*/
 .interact{
     font-size: 0;
-    height: .3rem;
-    margin-top: .4rem;
-    margin-bottom: .4rem;
+    height: .34rem;
+    margin-top: .56rem;
+    margin-bottom: .705rem;
 }
 .interact span{
     display: inline-block;
@@ -249,9 +249,9 @@ input,button{
     height: 100%;
     line-height: .34rem;
     color:rgb(153,153,153);
-    font-size: .15rem;
+    font-size: .16rem;
     position:relative;
-    text-indent: calc(.8rem * 3 / 5);
+    text-indent: .48rem;
     background: rgb(244,244,244);
 }
 .interact .laud.selected{
@@ -262,106 +262,120 @@ input,button{
 .interact .laud:after{
     content: " ";
     position: absolute;
-    width: .18rem;
-    height:.18rem;
+    width: .2rem;
+    height:.2rem;
     top: calc(50% - .09rem);
-    left: calc(.8rem * 1 / 5);
+    left: .129rem;
 }
 
 .interact .person{
-    width: calc(100% - 1.2rem);
-    margin-left: .1rem;
-    height: .3rem;
+    width: calc(100% - 1.25rem);
+    margin-left: .09rem;
+    height: .34rem;
     overflow: hidden;
 }
 .interact .person img{
-    height: .3rem;
-    margin-right:.08rem;
+    width: .34rem;
+    height: .34rem;
+    margin-right:.1rem;
 }
 .interact .person-num{
     display: inline-block;
     color:rgb(153,153,153);
-    width: .3rem;
+    width: .34rem;
     height: 100%;
     text-align: center;
     line-height: .3rem;
-    font-size:.14rem;
+    font-size:.16rem;
     border-radius:.02rem;
     background: rgb(244,244,244);
     vertical-align: middle;
 }
 /*comment 评论*/
 .comment{
-    padding-top:.3rem;
 }
 .comment h2{
-    font-size: .18rem;
+    height: .28rem;
+    font-size: .2rem;
+    line-height: .28rem;
+    font-weight: 600;
 }
 .comment h2> em{
-    font-size: .14rem;
+    font-size: .13rem;
     color:rgb(153,153,153);
 }
 .comment ul{
-    margin-top: .25rem;
+    margin-top: .3rem;
 
 }
 .comment ul li {
-    margin-top: .15rem;
+    margin-bottom: .24rem;
 }
 .comment-box h3{
     height: .3rem;
-    font-size: .16rem;
+    font-size: .17rem;
     line-height: .3rem;
+    margin-bottom: .02rem;
 }
 .comment-box h3 *{
+    vertical-align: middle;
+    
 }
 .comment-box h3 img{
-    height: 100%;
+    width: .26rem;
+    height: .26rem;
 }
 .comment-box h3 em{
-
+    font-weight: 600;
 }
 .comment-laud-btn{
+    height: .3rem;
     float:right;
     font-size: .14rem;
-    margin-right: .05rem;
+    line-height: .3rem;
 }
 
 .comment-box p{
-    padding-left: .45rem;
+    font-size: .16rem;
+    padding-left: .4rem;
     padding-right: .1rem;
     color:rgb(51,51,51);
-    line-height: .24rem;
+    line-height: .3rem;
     word-wrap: break-word;
+    margin-bottom: .02rem;
 }
 .comment-box p + div em{
-    padding-left: .45rem;
+    padding-left: .4rem;
     color:rgb(102,102,102);
-    font-size:.12rem;
-    line-height: .24rem;
+    font-size:.13rem;
+    height: .18rem;
+    line-height: .18rem;
+    display: block;
 }
 .comment-box p + div em a{
     color:rgb(102,102,102);
 }
 .comment-sub-box{
-    margin-top: .1rem;
+    margin-top: .12rem;
     margin-left: .45rem;
-    padding: .1rem;
+    padding: .15rem;
     background: rgb(249,249,249);
     
 }
 .comment-sub-box p{
+    font-size: .14rem;
     color:rgb(51,51,51);
 }
 .comment-sub-box p em{
-    
+    font-size: .15rem;
+    font-weight:600;
 }
 .comment-sub-box >a{
     color:rgb(51,51,51);
     font-size:.12rem;
     display: block;
     text-align:right;
-    margin-top: .15rem;
+    margin-top: .1rem;
 }
 /*input-container 输入框*/
 
@@ -370,8 +384,9 @@ input,button{
     bottom: 0;
     z-index: 999;
     width: 100%;
-    height: .45rem;
+    height: .5rem;
     padding: .1rem ;
+    padding-right: 0;
     background: rgb(249,249,249);
     display: none;
 }
@@ -381,18 +396,19 @@ input,button{
 }
 .input-container input[type=text]{
     display: inline-block;
-    height: .25rem;
+    height: .3rem;
     border: 0;
     font-size: .15rem;
-    width: calc(100% - .5rem);
+    width: 3.02rem;
     vertical-align: middle;
     caret-color:rgb(39,179,203);
     padding-left:.1rem; 
 }
 .input-container .sendBtn{
+
     display: inline-block;
-    width: .5rem;
-    font-size: .15rem;
+    width: calc(100% - 3.02rem);
+    font-size: .16rem;
     text-align: center;
     height: .25rem;
     border:0;
@@ -415,7 +431,7 @@ input,button{
 
 /*nav-foot*/
 .nav-foot{
-    height: .45rem;
+    height: .49rem;
     position: absolute;
     width: 100%;
     left:0;
@@ -462,7 +478,7 @@ input,button{
 
 .nav-foot .statis{
     position: absolute;
-    font-size: .12rem;
+    font-size: .11rem;
     color:rgb(102,102,102);
     top:.08rem;
     left:calc(50% + .05rem);
@@ -493,19 +509,23 @@ input,button{
     padding:0;
 }
 .window .comment{
-    padding-top: .2rem;
 }
-.interact-person{
-    margin-top:.1rem;
+.interact-person-box{
+    margin-top:.15rem;
     padding-left: .45rem;
-    padding-bottom: .2rem;
+    margin-bottom: .31rem;
+    height: .26rem;
+    line-height: 0;
+    font-size: 0
 }
 .interact-persons{
+    font-size:.13rem;
     display: inline-block;
     color:rgb(51,51,51);
     height: .25rem;
     line-height: .28rem;
     vertical-align: middle;
+    margin-left: 0.042rem
 }
 .comment-main{
     position: relative;
@@ -516,8 +536,8 @@ input,button{
 .comment-main ul {
     font-size: 0;
     display: inline-block;
-    height: .25rem;
-    max-width: calc(.35rem * 4);
+    height: .26rem;
+    max-width: calc(.35rem * 5);
     overflow: hidden;
     vertical-align: middle;
     text-align: right;
@@ -532,8 +552,8 @@ input,button{
     margin-left: .1rem;
 }
 .comment-main ul li a img{
-    width: .25rem;
-    height: .25rem;
+    width: .26rem;
+    height: .26rem;
     margin: 0
 }
 
@@ -564,7 +584,7 @@ input,button{
     color:rgb(102,102,102);
     padding-left: .2rem;
     background: url(../images/foot-tuijian.png) no-repeat left center;
-    background-size: .16rem;
+    background-size: .156rem;
 }
 .icon-laud.selected{
     background: url(../images/foot-tuijian-selected.png) no-repeat left center;
@@ -618,10 +638,19 @@ input,button{
     background: url(../images/foot-fenxiang.png) no-repeat center;    
     background-size: .2rem;
 }
+
+
+
+
 /* media */
 @media screen and (max-width: 320px) {
     html{
         font-size: calc(100vw/3.2);
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 360px){
+    html{
+        font-size: calc(100vw/3.6);
     }
 }
 @media screen and (min-width: 376px) and (max-width: 414px) {
@@ -634,5 +663,3 @@ input,button{
         font-size: 100px;
     }
 }
-
-

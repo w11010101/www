@@ -587,7 +587,7 @@ input,button{
     background-size: .156rem;
 }
 .icon-laud.selected{
-    background: url(../images/foot-tuijian-selected.png) no-repeat left top;
+    background: url(../images/foot-tuijian-selected.png) no-repeat left center;
     background-size: .16rem; 
 }
 .icon-del{

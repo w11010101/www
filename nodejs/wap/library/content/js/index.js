@@ -16,69 +16,32 @@ function clickLaudFn(event){
 myScroll = new iScroll('wrapper',{
   vScrollbar:false
 });
-var scrollState = true;
-var option = {
-    id:"windowWrapper", 
-    pullDown:function (){
-        windowWrapper.refresh();
+function loadedScroll(){
+  var scrollState = true;
+  refresher.init({
+    id: "windowWrapper",
+    pullDownAction: function (){
+      // 下拉
+      windowWrapper.refresh();
     },
-    pullUp:function (){
-      if(scrollState){
-        scrollState = false;
-        setTimeout(function() {
-          scrollState = true;
+    pullUpAction: function (){
+      // 上拉
+      setTimeout(function (){
+        if(scrollState){
+          // scrollState = false;
           windowWrapper.refresh();
-        }, 1000);
-      }
-    }
+        }
+      },1000);
+    },
+      // preventDefault:false
+  });
 }
 
-
-
-// 弹出层
-var popoverOption = {
-  html:true
-}
-$(".navbar-popover").popover(popoverOption);
-
-// 弹出层显示前点击事件的监听
-$('.navbar-popover').on('show.bs.popover', function () {
-  // 设置弹窗层内容
-  $(this).attr("data-content",`${(function(){
-    return `<div class="remarkBtn icon-remark">备注标题</div>
-            <div class="delBtn icon-del">删除</div>`;
-  })()}`);
-  // 显示遮罩层
-  $(".popover-mask").fadeIn(100);
-  // 弹出层内的选项点击事件
-  $(".popover-content div").off().on("click",popoverClick);
-});
-
-// 弹出层显示后点击事件的监听
-$('.navbar-popover').on('shown.bs.popover', function () {
-  // 弹出层内的选项点击事件
-  $(".popover-content div").off().on("click",popoverClick);
-});
-
-function hideFn(){
-  $(".popover-mask").fadeOut(100);
-  $('.navbar-popover').trigger("click");
-};
-
-function popoverClick(){
-  console.log($(this).text());
-  hideFn();
-};
- 
 // 全部评论
 $(".essay-comment-btn").on("click",function(){
   $(".window").show(0,function(){
     $(this).addClass("show");
-    
-    if(!windowWrapper.scroller){
-      loadMore.scroll(option);
-    }
-
+    loadedScroll();
   })
 })
 
