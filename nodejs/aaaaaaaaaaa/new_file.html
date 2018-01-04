@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<style type="text/css">
+			.chidao{
+				background: #00B7EE;
+				width: 20px;
+				height: 10px;
+				display: block;
+			}
+			.zaotui{
+				background: #EC971F;
+				width: 20px;
+				height: 10px;
+				display: block;
+			}
+			p span, p span i{
+				display: inline-block;
+			}
+			ul li{
+				position: relative;
+			}
+			ul li p{
+				margin: 0;
+				padding: 0;
+				display: block;
+			}
+			.li-chidao{
+				width: 50%;
+				height: 46px;
+				background: #00B7EE;
+				/*float: left;*/
+				left: 0;
+			}
+			.li-zaotui{
+				width: 50%;
+				height: 46px;
+				background: #EC971F;
+				/*float: right;*/	
+				right: 0;
+			}
+			li h5{
+				color: #fff;
+				position: absolute;
+				left: 20px;
+				top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+			<h1 class="mui-title">统计</h1>
+		</header>
+		<div class="mui-content">
+			<p><span>迟到<i class="chidao"></i></span><span>早退<i class="zaotui"></i></span></p>
+			<ul class="mui-table-view">
+				
+				<li>
+					<p class="li-chidao"></p>
+					<p class="li-zaotui"></p>
+					<h5>科学与法律</h5>
+				</li>
+				<li>
+					<p class="li-chidao"></p>
+					<p class="li-zaotui"></p>
+					<h5>生存的学科</h5>
+				</li>
+				<li>
+					<p class="li-chidao"></p>
+					<p class="li-zaotui"></p>
+					<h5>好长好长好长好长好好长好长好长的学科</h5>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -24,24 +24,30 @@ var server = http.createServer(function (request, response) {
             
             post = querystring.parse(post);
             switch (post.type){
-                case "state":
-                    loadFile("json/data/state.json");
+                case "zhangdan":
+                    loadFile("json/data/zhangdan.json");
                 break;
-                case "type":
-                    loadFile("json/data/type.json");
+                case "sex":
+                    loadFile("json/data/sex.json");
                 break;
-                case "class1":
-                    loadFile("json/data/class1.json");
-                break;
-                case "class":
-                    loadFile("json/data/class.json");
-                break;
-                case "data_3":
-                    loadFile("json/data/data3.json");
-                break;
-                case "list":
-                    loadFile("json/data/list.json");
-                break;
+                // case "state":
+                //     loadFile("json/data/state.json");
+                // break;
+                // case "type":
+                //     loadFile("json/data/type.json");
+                // break;
+                // case "class1":
+                //     loadFile("json/data/class1.json");
+                // break;
+                // case "class":
+                //     loadFile("json/data/class.json");
+                // break;
+                // case "data_3":
+                //     loadFile("json/data/data3.json");
+                // break;
+                // case "list":
+                //     loadFile("json/data/list.json");
+                // break;
                 // case "response":
                 //     loadFile("response/response.json");
                 // break;
@@ -215,7 +221,7 @@ function getRandomm(i, max) {
     }
     return arr;
 }
-server.listen(3000,"localhost",function(data){
+server.listen(3000,function(data){
     console.log("开始监听... http://localhost:3000/");
     // console.dir(url.parse);
 });

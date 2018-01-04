@@ -1,8 +1,33 @@
 html{
-    font-size: calc(100vw/3.75);
-    
+    font-size: calc(100vw/3.75); 
+    font: Helvetica, Arial;
+    /*font-family:Arial,'Times New Roman','Microsoft YaHei',SimHei;   */
+    font-size: 100px; 
+}
+@font-face{
+    font-family: RobotoMedium;
+    src:url(../font/Roboto-Medium.ttf);
+}
+@font-face{
+    font-family: RobotoRegular;
+    src:url(../font/Roboto-Regular.ttf);
+}
+@font-face{
+    font-family: SourceHanSansCNMedium;
+    src:url(../font/SourceHanSansCN-Medium.otf);
+}
+@font-face{
+    font-family: SourceHanSansCNRegular;
+    src:url(../font/SourceHanSansCN-Regular.otf);
+}
+html,body,.content{
+    height: 100%;
 }
 html *{
+    /*font-family: "SourceHanSansCNRegular";*/
+    font-family:'RobotoRegular','SourceHanSansCNRegular';
+    font-size: .16rem;
+    max-width:100%;
     padding:0;
     margin: 0;
     list-style:none;
@@ -14,9 +39,18 @@ html *{
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+    
+
 }
+/**:not(input,button,textarea){
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}*/
 img{
-    height: 50%;
     margin-right: .1rem;
 }
 input,button{
@@ -154,6 +188,7 @@ input,button{
     line-height: .32rem;
     color:rgb(51,51,51);
     font-weight: 600;
+    font-family: 'SourceHanSansCNMedium';
 }
 .essay-container{
     margin:0;
@@ -171,6 +206,8 @@ input,button{
 .essay-container > div img{
     width: .18rem;
     height: .18rem;
+    border-radius: 50%;
+    overflow: hidden;
     margin-right: .05rem;
     display: inline-block;
     vertical-align: middle;
@@ -195,12 +232,12 @@ input,button{
     display: block;
     margin-top: .2rem;
     margin-bottom: .2rem;
+    overflow: hidden;
 }
 .inset-box .inset{
     display: block;
-    width: 100vw;
-    margin-left: -.15rem;
-    margin-right: -.1rem;
+    margin: 0 auto;
+
 }
 .essay-container .inset-box p{
     text-align: center;
@@ -213,7 +250,7 @@ input,button{
 }
 .essay-container p {
     color:rgb(85,85,85);
-    font-size: .16rem;
+    font-size: .17rem;
     line-height: .3rem;
     text-align: justify;
     word-wrap: break-word;
@@ -294,26 +331,41 @@ input,button{
 /*comment 评论*/
 .comment{
 }
+hr{
+    width: 100%;
+    height: 1px;
+    background: rgb(249,249,249);
+}
 .comment h2{
     height: .28rem;
     font-size: .2rem;
     line-height: .28rem;
     font-weight: 600;
+    margin-bottom: .2rem;
 }
 .comment h2> em{
     font-size: .13rem;
     color:rgb(153,153,153);
 }
 .comment ul{
-    margin-top: .3rem;
+    /*margin-top: .3rem;*/
 
 }
-.comment ul li {
+.comment-list li {
     margin-bottom: .24rem;
+}
+.comment-list .line{
+    height: 1px;
+    width: 110%;
+    background: #e0e0e0;
+    margin-bottom: .2rem;
+    position: relative;
+    z-index: 1;
+    /*left: .25rem;*/
 }
 .comment-box h3{
     height: .3rem;
-    font-size: .17rem;
+    font-size: .16rem;
     line-height: .3rem;
     margin-bottom: .02rem;
 }
@@ -321,13 +373,37 @@ input,button{
     vertical-align: middle;
     
 }
-.comment-box h3 img{
+.sub-title{
+    font-size: .14rem;
+    color:#8d8d8d;
+    padding-bottom: .2rem;
+
+}
+.header-img {
+    display: inline-block;
     width: .26rem;
     height: .26rem;
+    border-radius: 50%;
+    margin-right: .1rem;
+    overflow:hidden;
+}
+.header-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.person .header-img{
+    width: .34rem;
+    height: .34rem;
+}
+.comment-box h3 img{
+    width: 100%;
+
 }
 .comment-box h3 em{
     font-weight: 600;
 }
+
 .comment-laud-btn{
     height: .3rem;
     float:right;
@@ -354,6 +430,8 @@ input,button{
 }
 .comment-box p + div em a{
     color:rgb(102,102,102);
+    font-size: .13rem;
+    vertical-align: middle;
 }
 .comment-sub-box{
     margin-top: .12rem;
@@ -381,13 +459,15 @@ input,button{
 
 .input-container{
     position: fixed;
-    bottom: 0;
+    bottom:0;
+    left: 0;
     z-index: 999;
     width: 100%;
     height: .5rem;
     padding: .1rem ;
     padding-right: 0;
     background: rgb(249,249,249);
+    border-top: 1px solid #e0e0e0;
     display: none;
 }
 .input-container .input-box {
@@ -396,21 +476,21 @@ input,button{
 }
 .input-container input[type=text]{
     display: inline-block;
+    width: calc(100% - .8rem);
     height: .3rem;
     border: 0;
     font-size: .15rem;
-    width: 3.02rem;
     vertical-align: middle;
     caret-color:rgb(39,179,203);
     padding-left:.1rem; 
+    margin-right: .1rem;
 }
 .input-container .sendBtn{
-
     display: inline-block;
-    width: calc(100% - 3.02rem);
+    width: .6rem;
     font-size: .16rem;
     text-align: center;
-    height: .25rem;
+    height: .3rem;
     border:0;
     background: none;
     color:rgb(39,179,203);
@@ -418,7 +498,8 @@ input,button{
     transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
 }
-.input-container .sendBtn:active{
+.input-container .sendBtn:active,
+.input-container .sendBtn:focus{
     background: rgb(39,179,203);
     color:#fff;
 }
@@ -436,6 +517,8 @@ input,button{
     width: 100%;
     left:0;
     bottom: 0;
+    background: #fff;
+    z-index: 1;
 }
 .nav-foot ul{
     font-size: 0;
@@ -448,7 +531,7 @@ input,button{
     content:" ";
     height: 1px;
     background: rgb(249,249,249);
-    top:px;
+    top:0;
     left:0;
 }
 .nav-foot ul li{
@@ -475,12 +558,16 @@ input,button{
 .nav-foot ul li a{
     position: relative;
 }
-
+.nav-foot ul li a:focus,
+.nav-foot ul li a:active,
+.nav-foot ul li a:hover{
+    background-color: none; 
+}
 .nav-foot .statis{
     position: absolute;
     font-size: .11rem;
     color:rgb(102,102,102);
-    top:.08rem;
+    top:.07rem;
     left:calc(50% + .05rem);
     background: #fff;
     border-radius: 50%;
@@ -504,7 +591,6 @@ input,button{
     transform: translateY(0);
     -webkit-transform: translateY(0);
 }
-
 .window .replies-container{
     padding:0;
 }
@@ -544,6 +630,7 @@ input,button{
 }
 .comment-main ul li{
     display: inline-block;
+    vertical-align: middle;
 }
 .comment-main ul li a{
     display: block;
@@ -558,7 +645,7 @@ input,button{
 }
 
 /* 悬浮分享按钮 */
-.laud-btn{
+.share-btn{
     position: fixed;
     width: .45rem;
     height: .45rem;
@@ -566,7 +653,7 @@ input,button{
     bottom: .7rem;
     right: .1rem;
 }
-.laud-btn a{
+.share-btn a{
     display: block;
     height: 100%;
 }
@@ -581,7 +668,8 @@ input,button{
     background-size: .2rem;
 }
 .icon-laud{
-    color:rgb(102,102,102);
+    color:#999;
+    font-weight: normal;
     padding-left: .2rem;
     background: url(../images/foot-tuijian.png) no-repeat left center;
     background-size: .156rem;

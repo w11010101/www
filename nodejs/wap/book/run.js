@@ -8,7 +8,7 @@ var router = express.Router();
 
 
 app.use(express.static(__dirname));
-app.use(express.static("views"));
+app.use(express.static("views/"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -18,7 +18,7 @@ app.get("/", function(req,res) {
     root:__dirname,
   }
 
-  res.sendFile("/views/index.html",options,function(err){
+  res.sendFile("/index.html",options,function(err){
     if(err){
       console.log(err);
       res.status(err.status).end();

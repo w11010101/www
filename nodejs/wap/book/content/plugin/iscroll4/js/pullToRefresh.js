@@ -51,24 +51,12 @@ var refresher = {
 		var pullDownOffset = pullDownEl.offsetHeight;
 		var pullUpEl = wrapper.querySelector(".pullUp");
 		var pullUpOffset = pullUpEl.offsetHeight;
-		return this.scrollIt(parameter, pullDownEl, pullDownOffset, pullUpEl, pullUpOffset);
+		var scrollStart = parameter.onBeforeScrollStart
+		return this.scrollIt(parameter, pullDownEl, pullDownOffset, pullUpEl, pullUpOffset,scrollStart);
 
 	},
-	scrollIt: function(parameter, pullDownEl, pullDownOffset, pullUpEl, pullUpOffset) {
-		let myScroll = eval(parameter.id + `= new iScroll(parameter.id, {
-				useTransition: true,
-				vScrollbar: false,
-				topOffset: pullDownOffset,
-				onRefresh: function () {
-					refresher.onRelease(pullDownEl,pullUpEl);
-				},
-				onScrollMove: function () {
-					refresher.onScrolling(this,pullDownEl,pullUpEl,pullUpOffset);
-				},
-				onScrollEnd: function () {
-					refresher.onPulling(pullDownEl,parameter.pullDownAction,pullUpEl,parameter.pullUpAction);
-				},
-			})`);
+	scrollIt: function(parameter, pullDownEl, pullDownOffset, pullUpEl, pullUpOffset,scrollStart) {
+		var myScroll = eval(parameter.id + '= new iScroll(parameter.id,{useTransition:true,vScrollbar:false,topOffset:pullDownOffset,onRefresh:function(){refresher.onRelease(pullDownEl,pullUpEl)},onScrollMove:function(){refresher.onScrolling(this,pullDownEl,pullUpEl,pullUpOffset)},onScrollEnd:function(){refresher.onPulling(pullDownEl,parameter.pullDownAction,pullUpEl,parameter.pullUpAction)},onBeforeScrollStart:function(a){scrollStart(a)}});');
 		pullDownEl.querySelector('.pullDownLabel').innerHTML = refresher.info.pullDownLable;
 		document.addEventListener('touchmove', function(e) {
 			e.preventDefault();

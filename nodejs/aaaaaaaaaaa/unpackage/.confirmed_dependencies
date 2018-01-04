@@ -1,0 +1,17 @@
+{
+	"index.html": {
+		"resources": [
+			"img/img-add.png",
+			"js/webuploader.js",
+			"js/upload.js",
+			"css/style.css",
+			"css/webuploader.css",
+			"js/jquery.js",
+			"img/progress.png",
+			"img/bg.png",
+			"img/icons.png",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
+}

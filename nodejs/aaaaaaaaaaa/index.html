@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>图片上传</title>
+    <link rel="stylesheet" href="css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/webuploader.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <button>相机</button>
+            <input type="file" accept="image/*" >
+            <input type="file" accept="image/*" capture="camera">
+            <input type="file" accept="video/*" capture="camcorder">
+            <!-- <input type="file" accept="audio/*" capture="microphone"> -->
+            
+            <!--  -->
+            <!-- <div class="androiddoem" style="display: block;">
+            	<ul id="demo-list">
+            		<li class="androiddoem-img androiddoem-addimg"></li>
+            	</ul>
+            	<p class="demo-tip">上传图片 您最多可上传<span>4</span>张照片</p>
+            </div>
+            <button type="button" id="ceshi_btn" class="mui-btn mui-btn-blue mui-btn-block">测试按钮</button> -->
+        </div>
+        
+    </div>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/webuploader.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
+    <script type="text/javascript" src="js/androiddome.js" ></script>
+    <script type="text/javascript">
+        // console.log(window.webkitURL)
+    	mui.init();
+    	demobar();
+        click_img_select();
+        
+        // 相机 
+        function click_img_select() {
+		    document.querySelector(".androiddoem-addimg").addEventListener("click", function () {
+		       if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {  //判断iPhone|iPad|iPod|iOS
+				    console.log("ios");
+                    window.location.href = 'ios://faceopencamera?type:3&data:"1"&sign:""';
+				} else if (/(Android)/i.test(navigator.userAgent)) {   //判断Android
+				    console.log("android");
+				    demobar();
+				} else {  //pc
+					console.log("pc");
+				};
+		
+		    })
+		};
+    	// 相册
+        document.querySelector(".androiddoem-addimg").addEventListener("click", function () {
+            if (isAndroid) {
+                window.AndroidWebView.appInterface('{ "type": "GETPHOTO", "data": "1", "sign": "" }');
+            }
+            if (isiOS) {
+                window.location.href = 'ios://faceopenalbum?type:3&data:"1"&sign:""';
+            }
+
+        })
+        // 相册回调
+        function jsInterface(natieJson) {
+            natieJson = natieJson.replace("[", '').replace("]", '').replace("\n", '');
+            var a = new Array();
+            a = natieJson.split(",");
+            demobar(a);
+        }
+    </script>
+</body>
+</html>
