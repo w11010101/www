@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "img": "../../content/style/white/yingyongqingdan/images/shuzihaida.png",
+            "title": "商户管理",
+            "describe": "简便的商户管理助手，营业情况一目了然。",
+            "face": "教职工"
+        },
+        {
+            "img": "../../content/style/white/yingyongqingdan/images/guzhangbaoxiu.png",
+            "title": "故障报修",
+            "describe": "简便的商户管理助手，营业情况一目了然。",
+            "face": "教职工"
+        },
+        {
+            "img": "../../content/style/white/yingyongqingdan/images/renzhengguanli.png",
+            "title": "人脸审核",
+            "describe": "简便的商户管理助手，营业情况一目了然。",
+            "face": "教职工"
+        },
+        {
+            "img": "../../content/style/white/yingyongqingdan/images/erweima.png",
+            "title": "二维码",
+            "describe": "简便的商户管理助手，营业情况一目了然。",
+            "face": "教职工"
+        }
+    ]
+}
