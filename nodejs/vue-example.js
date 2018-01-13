@@ -38,6 +38,9 @@ var server = http.createServer(function (request, response) {
                 case "slides":
                     loadFile("json/vue-data/slides.json");
                 break;
+                case "slides1":
+                    loadFile("json/vue-data/slides1.json");
+                break;
             }
         });
         // 读取文件
